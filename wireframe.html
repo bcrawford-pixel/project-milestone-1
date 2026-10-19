@@ -5,15 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Wireframe | Benjamin Crawford</title>
   <style>
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       background: #efefef;
-      color: #1f1f1f;
+      color: #202020;
     }
 
     .page {
@@ -50,7 +48,7 @@
 
     nav a {
       display: inline-block;
-      background: white;
+      background: #fff;
       border: 1px solid #b8b8b8;
       padding: 10px 14px;
       text-decoration: none;
@@ -100,6 +98,7 @@
       display: grid;
       grid-template-columns: 1.4fr 1fr;
       gap: 20px;
+      margin-top: 20px;
     }
 
     .card-list {
@@ -131,6 +130,10 @@
       padding: 14px;
     }
 
+    .small-box p {
+      margin-bottom: 0;
+    }
+
     footer {
       background: #d9d9d9;
       border: 2px solid #b5b5b5;
@@ -151,33 +154,36 @@
 <body>
   <div class="page">
     <header>
-      <h1>Benjamin Crawford</h1>
-      <p class="subtitle">Web Student • Game Lover • Web Developer</p>
+      <h1>Home</h1>
+      <p class="subtitle">Benjamin Crawford: a web student.</p>
     </header>
 
     <nav>
       <a href="index.html">Home</a>
-      <a href="projects.html">Projects</a>
+      <a href="projects.html">Project</a>
       <a href="about.html">About</a>
-      <a href="wireframe.html">Wireframe</a>
     </nav>
 
     <main>
       <section class="hero">
         <div class="box">
           <h2>Welcome</h2>
-          <p>I enjoy playing video games and building webpages.</p>
-          <p>Benjamin Crawford is a web student who is inspired by web and game development.</p>
+          <p>I enjoy Playing video games.</p>
+          <p>Benjamin Crawford is a web student.</p>
         </div>
 
         <div class="placeholder-img">
-          Main Image / Profile Photo
+          <div>
+            <div>Image</div>
+            <div>of a kid playing video games.</div>
+          </div>
         </div>
       </section>
 
       <section class="content-grid">
         <div class="box">
-          <h2>Favorite Video Games</h2>
+          <h2>Video games</h2>
+          <h3>Favorite video games</h3>
           <ul class="card-list">
             <li>Marvel's Wolverine</li>
             <li>God of War</li>
@@ -193,14 +199,17 @@
 
           <div class="small-box">
             <strong>Featured Work</strong>
-            <p>About Me, My Hobbies, My Favorite Hobby</p>
+            <p>About Me</p>
+            <p>My Hobbies</p>
+            <p>My Favorite Hobby</p>
           </div>
         </div>
       </section>
 
-      <section class="content-grid" style="margin-top: 20px;">
+      <section class="content-grid">
         <div class="box">
-          <h2>Developer Types</h2>
+          <h2>Developers</h2>
+          <h3>Different developers</h3>
           <ul class="card-list">
             <li>Software Developers</li>
             <li>Web Developers</li>
@@ -209,13 +218,14 @@
         </div>
 
         <div class="box">
-          <h2>Project Summary</h2>
-          <p>I enjoy building webpages and creating work that reflects my interests in technology, games, and design.</p>
+          <h2>Project</h2>
+          <p>I enjoy building webpages.</p>
+          <p>Project description comming soon</p>
         </div>
       </section>
     </main>
 
-    <footer>Created by Benjamin Crawford</footer>
+    <footer>Created by Benjamin Crawford.</footer>
   </div>
 </body>
 </html>
