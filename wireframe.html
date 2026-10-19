@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wireframe | Benjamin Crawford</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f3f3f3;
+      color: #222;
+    }
+
+    header {
+      background: #d9d9d9;
+      padding: 20px;
+      border-bottom: 2px solid #999;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: 2rem;
+    }
+
+    nav {
+      background: #eaeaea;
+      padding: 15px 20px;
+      border-bottom: 2px solid #b5b5b5;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #111;
+      background: #fff;
+      border: 1px solid #bbb;
+      padding: 8px 14px;
+      border-radius: 4px;
+    }
+
+    main {
+      padding: 25px;
+    }
+
+    .wireframe {
+      max-width: 1100px;
+      margin: 0 auto;
+      background: #fff;
+      border: 2px solid #bbb;
+      padding: 20px;
+    }
+
+    .topbar {
+      background: #f0f0f0;
+      border: 2px solid #b8b8b8;
+      height: 60px;
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+    }
+
+    .nav-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .nav-box, .card, .side-box, .footer-box {
+      background: #f5f5f5;
+      border: 2px solid #b8b8b8;
+      min-height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+    }
+
+    .hero {
+      border: 2px solid #b8b8b8;
+      background: #fafafa;
+      min-height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+      font-size: 1.4rem;
+      font-weight: bold;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+
+    .feature-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .card {
+      min-height: 110px;
+    }
+
+    .side-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .side-box {
+      min-height: 90px;
+    }
+
+    .footer-box {
+      min-height: 50px;
+      margin-top: 12px;
+    }
+
+    @media (max-width: 700px) {
+      .nav-row, .feature-list, .content-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Wireframe</h1>
+    <p>Benjamin Crawford: a web student.</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="projects.html">Project</a>
+    <a href="about.html">About</a>
+    <a href="wireframe.html">Wireframe</a>
+  </nav>
+
+  <main>
+    <div class="wireframe">
+      <div class="topbar">Header / Branding Area</div>
+
+      <div class="nav-row">
+        <div class="nav-box">Home</div>
+        <div class="nav-box">Projects</div>
+        <div class="nav-box">About</div>
+        <div class="nav-box">Contact</div>
+      </div>
+
+      <div class="hero">Hero / Main Image Section</div>
+
+      <div class="content-grid">
+        <section>
+          <div class="nav-box" style="margin-bottom:12px; min-height:40px;">Featured Content Title</div>
+          <div class="feature-list">
+            <div class="card">Feature 1</div>
+            <div class="card">Feature 2</div>
+            <div class="card">Feature 3</div>
+          </div>
+        </section>
+
+        <aside class="side-stack">
+          <div class="side-box">Sidebar Card</div>
+          <div class="side-box">Quick Links</div>
+          <div class="side-box">Profile / Bio</div>
+        </aside>
+      </div>
+
+      <div class="footer-box">Footer / Copyright</div>
+    </div>
+  </main>
+</body>
+</html>
