@@ -3,180 +3,363 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wireframe | Benjamin Crawford</title>
+  <title>Portfolio Wireframe | Benjamin Crawford</title>
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f3f3f3;
-      color: #222;
+    :root {
+      --bg: #f4f7fb;
+      --panel: #ffffff;
+      --soft: #eef3f9;
+      --line: #d8e1ec;
+      --primary: #2f6fed;
+      --primary-dark: #224bb0;
+      --text: #1d2430;
+      --muted: #5f6b7a;
+      --shadow: 0 12px 30px rgba(19, 33, 58, 0.08);
     }
 
-    header {
-      background: #d9d9d9;
-      padding: 20px;
-      border-bottom: 2px solid #999;
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(180deg, #f8fbff 0%, #eef3f9 100%);
+      color: var(--text);
+    }
+
+    .page {
+      max-width: 1200px;
+      margin: 28px auto;
+      padding: 0 20px 40px;
+    }
+
+    .topbar {
+      background: linear-gradient(135deg, #1a1f2a, #2d3f65);
+      color: white;
+      padding: 24px 30px;
+      border-radius: 18px 18px 0 0;
+      box-shadow: var(--shadow);
+    }
+
+    .brand-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
     }
 
     h1 {
-      margin: 0 0 10px;
-      font-size: 2rem;
+      margin: 0;
+      font-size: clamp(2rem, 3vw, 2.8rem);
+      letter-spacing: 0.04em;
+    }
+
+    .tagline {
+      margin-top: 8px;
+      color: rgba(255,255,255,0.8);
+      font-size: 1rem;
+    }
+
+    .badge {
+      border: 1px solid rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.08);
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
 
     nav {
-      background: #eaeaea;
-      padding: 15px 20px;
-      border-bottom: 2px solid #b5b5b5;
+      background: #ffffff;
+      border-bottom: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      padding: 18px 30px;
       display: flex;
-      gap: 12px;
       flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
     }
 
     nav a {
       text-decoration: none;
-      color: #111;
-      background: #fff;
-      border: 1px solid #bbb;
-      padding: 8px 14px;
-      border-radius: 4px;
-    }
-
-    main {
-      padding: 25px;
-    }
-
-    .wireframe {
-      max-width: 1100px;
-      margin: 0 auto;
-      background: #fff;
-      border: 2px solid #bbb;
-      padding: 20px;
-    }
-
-    .topbar {
-      background: #f0f0f0;
-      border: 2px solid #b8b8b8;
-      height: 60px;
-      margin-bottom: 18px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      color: var(--text);
+      padding: 10px 16px;
+      border-radius: 10px;
+      background: var(--soft);
+      border: 1px solid var(--line);
       font-weight: bold;
+      transition: 0.2s ease;
     }
 
-    .nav-row {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
-      margin-bottom: 18px;
+    nav a:hover {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
     }
 
-    .nav-box, .card, .side-box, .footer-box {
-      background: #f5f5f5;
-      border: 2px solid #b8b8b8;
-      min-height: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
+    .content {
+      background: rgba(255,255,255,0.9);
+      border: 1px solid var(--line);
+      border-top: none;
+      border-radius: 0 0 18px 18px;
+      box-shadow: var(--shadow);
+      padding: 30px;
     }
 
     .hero {
-      border: 2px solid #b8b8b8;
-      background: #fafafa;
-      min-height: 180px;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 22px;
+      margin-bottom: 26px;
+      align-items: stretch;
+    }
+
+    .hero-main,
+    .hero-side,
+    .card,
+    .info-box {
+      background: linear-gradient(180deg, #ffffff, #f8fafd);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(20, 31, 54, 0.04);
+    }
+
+    .hero-main {
+      padding: 28px;
+      min-height: 240px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: linear-gradient(135deg, #eaf2ff, #ffffff);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: bold;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+      width: fit-content;
+    }
+
+    .hero-main h2 {
+      margin: 0 0 12px;
+      font-size: clamp(1.8rem, 2.5vw, 2.6rem);
+    }
+
+    .hero-main p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 1.05rem;
+    }
+
+    .hero-side {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: linear-gradient(180deg, #f2f7ff, #ffffff);
+    }
+
+    .mock-image {
+      background: linear-gradient(135deg, #dfeaff, #c7d9ff);
+      border: 1px dashed #8ea9dc;
+      min-height: 170px;
+      border-radius: 14px;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 18px;
-      font-size: 1.4rem;
+      color: var(--primary-dark);
       font-weight: bold;
+      letter-spacing: 0.04em;
     }
 
-    .content-grid {
+    .section-title {
+      margin: 10px 0 16px;
+      font-size: 1.4rem;
+      color: var(--text);
+    }
+
+    .feature-grid {
       display: grid;
-      grid-template-columns: 2fr 1fr;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 18px;
-      margin-bottom: 18px;
-    }
-
-    .feature-list {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
+      margin-bottom: 26px;
     }
 
     .card {
-      min-height: 110px;
+      padding: 20px;
+      min-height: 170px;
     }
 
-    .side-stack {
+    .card .icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #dfeafc, #bfd1ff);
       display: flex;
-      flex-direction: column;
-      gap: 14px;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      margin-bottom: 16px;
     }
 
-    .side-box {
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 1.2rem;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .bottom-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 0.8fr;
+      gap: 20px;
+    }
+
+    .info-box {
+      padding: 20px;
+    }
+
+    .info-box h3 {
+      margin-top: 0;
+      font-size: 1.3rem;
+    }
+
+    .list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 12px;
+    }
+
+    .list li {
+      background: var(--soft);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 12px 14px;
+      color: var(--text);
+    }
+
+    .mini-box {
+      background: var(--soft);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 12px;
       min-height: 90px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      font-weight: bold;
     }
 
-    .footer-box {
-      min-height: 50px;
-      margin-top: 12px;
+    footer {
+      text-align: center;
+      color: var(--muted);
+      padding: 24px 10px 8px;
+      font-size: 0.95rem;
     }
 
-    @media (max-width: 700px) {
-      .nav-row, .feature-list, .content-grid {
+    @media (max-width: 800px) {
+      .hero,
+      .feature-grid,
+      .bottom-grid {
         grid-template-columns: 1fr;
       }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Wireframe</h1>
-    <p>Benjamin Crawford: a web student.</p>
-  </header>
-
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="projects.html">Project</a>
-    <a href="about.html">About</a>
-    <a href="wireframe.html">Wireframe</a>
-  </nav>
-
-  <main>
-    <div class="wireframe">
-      <div class="topbar">Header / Branding Area</div>
-
-      <div class="nav-row">
-        <div class="nav-box">Home</div>
-        <div class="nav-box">Projects</div>
-        <div class="nav-box">About</div>
-        <div class="nav-box">Contact</div>
+  <div class="page">
+    <header class="topbar">
+      <div class="brand-row">
+        <div>
+          <h1>Benjamin Crawford</h1>
+          <div class="tagline">Web student • Designer • Builder</div>
+        </div>
+        <div class="badge">Portfolio Wireframe</div>
       </div>
+    </header>
 
-      <div class="hero">Hero / Main Image Section</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="about.html">About</a>
+      <a href="wireframe.html">Wireframe</a>
+    </nav>
 
-      <div class="content-grid">
-        <section>
-          <div class="nav-box" style="margin-bottom:12px; min-height:40px;">Featured Content Title</div>
-          <div class="feature-list">
-            <div class="card">Feature 1</div>
-            <div class="card">Feature 2</div>
-            <div class="card">Feature 3</div>
-          </div>
-        </section>
+    <main class="content">
+      <section class="hero">
+        <div class="hero-main">
+          <span class="eyebrow">Featured</span>
+          <h2>Creative digital work with a clean, modern feel.</h2>
+          <p>
+            This wireframe showcases a polished portfolio layout with clear hierarchy,
+            balanced spacing, and a strong visual identity for a web development brand.
+          </p>
+        </div>
 
-        <aside class="side-stack">
-          <div class="side-box">Sidebar Card</div>
-          <div class="side-box">Quick Links</div>
-          <div class="side-box">Profile / Bio</div>
+        <aside class="hero-side">
+          <div class="mock-image">Hero Image / Snapshot</div>
         </aside>
-      </div>
+      </section>
 
-      <div class="footer-box">Footer / Copyright</div>
-    </div>
-  </main>
+      <h2 class="section-title">Key highlights</h2>
+      <section class="feature-grid">
+        <article class="card">
+          <div class="icon">✦</div>
+          <h3>Projects</h3>
+          <p>Showcase the most important work with large clear cards and concise summaries.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon">▣</div>
+          <h3>Skills</h3>
+          <p>Display technical strengths in a balanced, readable layout for quick scanning.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon">◎</div>
+          <h3>About</h3>
+          <p>Introduce your story, interests, and goals in a clean, welcoming section.</p>
+        </article>
+      </section>
+
+      <section class="bottom-grid">
+        <div class="info-box">
+          <h3>Featured content</h3>
+          <ul class="list">
+            <li>Portfolio Overview</li>
+            <li>Project Case Studies</li>
+            <li>Student Work and Design Process</li>
+            <li>Professional Summary and Goals</li>
+          </ul>
+        </div>
+
+        <aside class="info-box">
+          <h3>Quick links</h3>
+          <div class="mini-box">Profile</div>
+          <div class="mini-box">Resume</div>
+          <div class="mini-box">Contact</div>
+        </aside>
+      </section>
+    </main>
+
+    <footer>Created by Benjamin Crawford</footer>
+  </div>
 </body>
 </html>
