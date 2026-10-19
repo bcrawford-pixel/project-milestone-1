@@ -3,40 +3,48 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio Wireframe | Benjamin Crawford</title>
+  <title>Game Portfolio | Benjamin Crawford</title>
   <style>
     :root {
-      --bg: #f4f7fb;
-      --panel: #ffffff;
-      --soft: #eef3f9;
-      --line: #d8e1ec;
-      --primary: #2f6fed;
-      --primary-dark: #224bb0;
-      --text: #1d2430;
-      --muted: #5f6b7a;
-      --shadow: 0 12px 30px rgba(19, 33, 58, 0.08);
+      --bg: #080d18;
+      --bg-2: #101b2c;
+      --panel: rgba(19, 29, 42, 0.95);
+      --panel-soft: rgba(23, 34, 48, 0.82);
+      --line: rgba(129, 170, 255, 0.22);
+      --primary: #63d5ff;
+      --primary-2: #7c6bff;
+      --accent: #ff5ec4;
+      --gold: #ffd166;
+      --text: #edf5ff;
+      --muted: #9db2c8;
+      --shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
     }
 
     * { box-sizing: border-box; }
 
+    html { scroll-behavior: smooth; }
+
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background: linear-gradient(180deg, #f8fbff 0%, #eef3f9 100%);
+      background:
+        radial-gradient(circle at top, rgba(124, 107, 255, 0.35), transparent 25%),
+        radial-gradient(circle at right, rgba(99, 213, 255, 0.2), transparent 30%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
       color: var(--text);
     }
 
     .page {
       max-width: 1200px;
-      margin: 28px auto;
+      margin: 30px auto;
       padding: 0 20px 40px;
     }
 
     .topbar {
-      background: linear-gradient(135deg, #1a1f2a, #2d3f65);
-      color: white;
-      padding: 24px 30px;
+      background: linear-gradient(180deg, rgba(16, 27, 44, 0.92), rgba(11, 18, 28, 0.95));
+      border: 1px solid var(--line);
       border-radius: 18px 18px 0 0;
+      padding: 24px 28px;
       box-shadow: var(--shadow);
     }
 
@@ -44,65 +52,63 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 16px;
+      gap: 18px;
       flex-wrap: wrap;
     }
 
     h1 {
       margin: 0;
-      font-size: clamp(2rem, 3vw, 2.8rem);
-      letter-spacing: 0.04em;
-    }
-
-    .tagline {
-      margin-top: 8px;
-      color: rgba(255,255,255,0.8);
-      font-size: 1rem;
-    }
-
-    .badge {
-      border: 1px solid rgba(255,255,255,0.2);
-      background: rgba(255,255,255,0.08);
-      padding: 10px 14px;
-      border-radius: 999px;
-      font-size: 0.8rem;
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
       letter-spacing: 0.08em;
       text-transform: uppercase;
     }
 
+    .tag {
+      display: inline-block;
+      background: rgba(99, 213, 255, 0.12);
+      border: 1px solid rgba(99, 213, 255, 0.4);
+      color: var(--primary);
+      border-radius: 999px;
+      padding: 9px 14px;
+      font-size: 0.72rem;
+      font-weight: bold;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
     nav {
-      background: #ffffff;
-      border-bottom: 1px solid var(--line);
+      background: rgba(10, 16, 24, 0.9);
+      border: 1px solid var(--line);
+      border-top: none;
       box-shadow: var(--shadow);
-      padding: 18px 30px;
+      padding: 18px 28px;
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      align-items: center;
     }
 
     nav a {
       text-decoration: none;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--line);
       color: var(--text);
       padding: 10px 16px;
       border-radius: 10px;
-      background: var(--soft);
-      border: 1px solid var(--line);
       font-weight: bold;
       transition: 0.2s ease;
     }
 
     nav a:hover {
-      background: var(--primary);
-      color: white;
-      border-color: var(--primary);
+      background: linear-gradient(135deg, var(--primary), var(--primary-2));
+      border-color: transparent;
+      color: #06111d;
     }
 
     .content {
-      background: rgba(255,255,255,0.9);
+      background: rgba(11, 18, 28, 0.9);
       border: 1px solid var(--line);
       border-top: none;
-      border-radius: 0 0 18px 18px;
+      border-radius: 0 0 20px 20px;
       box-shadow: var(--shadow);
       padding: 30px;
     }
@@ -111,104 +117,145 @@
       display: grid;
       grid-template-columns: 1.5fr 1fr;
       gap: 22px;
-      margin-bottom: 26px;
-      align-items: stretch;
+      margin-bottom: 28px;
     }
 
     .hero-main,
-    .hero-side,
+    .side-panel,
     .card,
     .info-box {
-      background: linear-gradient(180deg, #ffffff, #f8fafd);
+      background: linear-gradient(180deg, rgba(19, 29, 42, 0.94), rgba(10, 16, 24, 0.94));
       border: 1px solid var(--line);
-      border-radius: 16px;
-      box-shadow: 0 8px 20px rgba(20, 31, 54, 0.04);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
     }
 
     .hero-main {
       padding: 28px;
-      min-height: 240px;
+      min-height: 260px;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      background: linear-gradient(135deg, #eaf2ff, #ffffff);
+      background: linear-gradient(135deg, rgba(124,107,255,0.15), rgba(99,213,255,0.12), rgba(10,16,24,0.97));
     }
 
     .eyebrow {
       display: inline-block;
-      background: var(--primary);
-      color: white;
-      padding: 6px 10px;
-      border-radius: 999px;
-      font-size: 0.75rem;
-      font-weight: bold;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
       margin-bottom: 14px;
       width: fit-content;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: bold;
     }
 
     .hero-main h2 {
       margin: 0 0 12px;
-      font-size: clamp(1.8rem, 2.5vw, 2.6rem);
+      font-size: clamp(2rem, 3vw, 3rem);
+      line-height: 1.1;
     }
 
     .hero-main p {
       margin: 0;
       color: var(--muted);
-      line-height: 1.6;
-      font-size: 1.05rem;
+      font-size: 1.04rem;
+      line-height: 1.7;
+      max-width: 58ch;
     }
 
-    .hero-side {
-      padding: 20px;
+    .cta-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 22px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 18px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: bold;
+      border: 1px solid transparent;
+    }
+
+    .btn.primary {
+      background: linear-gradient(135deg, var(--primary), var(--primary-2));
+      color: #06111d;
+    }
+
+    .btn.secondary {
+      background: rgba(255,255,255,0.04);
+      border-color: var(--line);
+      color: var(--text);
+    }
+
+    .side-panel {
+      padding: 18px;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      background: linear-gradient(180deg, #f2f7ff, #ffffff);
+      min-height: 260px;
     }
 
-    .mock-image {
-      background: linear-gradient(135deg, #dfeaff, #c7d9ff);
-      border: 1px dashed #8ea9dc;
-      min-height: 170px;
-      border-radius: 14px;
+    .mock-shot {
+      height: 100%;
+      min-height: 200px;
+      border-radius: 16px;
+      border: 1px dashed rgba(99,213,255,0.5);
+      background: linear-gradient(135deg, rgba(99,213,255,0.22), rgba(124,107,255,0.18));
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--primary-dark);
+      color: var(--primary);
       font-weight: bold;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-align: center;
+      padding: 20px;
     }
 
     .section-title {
-      margin: 10px 0 16px;
-      font-size: 1.4rem;
-      color: var(--text);
+      margin: 0 0 16px;
+      font-size: 1.7rem;
+      letter-spacing: 0.04em;
     }
 
     .feature-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-      margin-bottom: 26px;
+      gap: 20px;
+      margin-bottom: 30px;
     }
 
     .card {
       padding: 20px;
-      min-height: 170px;
+      min-height: 220px;
+      position: relative;
+      overflow: hidden;
     }
 
-    .card .icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 12px;
-      background: linear-gradient(135deg, #dfeafc, #bfd1ff);
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto auto 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, var(--primary), var(--accent), var(--gold));
+    }
+
+    .icon {
+      width: 52px;
+      height: 52px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.3rem;
+      border-radius: 14px;
+      background: linear-gradient(135deg, rgba(99,213,255,0.2), rgba(124,107,255,0.2));
+      border: 1px solid var(--line);
       margin-bottom: 16px;
+      font-size: 1.3rem;
     }
 
     .card h3 {
@@ -219,12 +266,41 @@
     .card p {
       margin: 0;
       color: var(--muted);
-      line-height: 1.5;
+      line-height: 1.6;
+    }
+
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+
+    .stat-box {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px;
+      text-align: center;
+    }
+
+    .stat-box strong {
+      display: block;
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+
+    .stat-box span {
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.75rem;
     }
 
     .bottom-grid {
       display: grid;
-      grid-template-columns: 1.4fr 0.8fr;
+      grid-template-columns: 1.2fr 0.8fr;
       gap: 20px;
     }
 
@@ -234,50 +310,50 @@
 
     .info-box h3 {
       margin-top: 0;
+      margin-bottom: 14px;
       font-size: 1.3rem;
     }
 
     .list {
       list-style: none;
-      padding: 0;
       margin: 0;
+      padding: 0;
       display: grid;
       gap: 12px;
     }
 
     .list li {
-      background: var(--soft);
+      background: rgba(255,255,255,0.03);
       border: 1px solid var(--line);
-      border-radius: 10px;
       padding: 12px 14px;
+      border-radius: 10px;
       color: var(--text);
     }
 
     .mini-box {
-      background: var(--soft);
-      border: 1px solid var(--line);
-      border-radius: 12px;
       padding: 16px;
-      margin-bottom: 12px;
-      min-height: 90px;
+      border-radius: 12px;
+      background: rgba(99,213,255,0.08);
+      border: 1px solid var(--line);
+      min-height: 86px;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--muted);
+      text-align: center;
+      color: var(--text);
+      margin-bottom: 12px;
       font-weight: bold;
     }
 
     footer {
       text-align: center;
       color: var(--muted);
-      padding: 24px 10px 8px;
+      padding: 22px 10px 8px;
       font-size: 0.95rem;
     }
 
-    @media (max-width: 800px) {
-      .hero,
-      .feature-grid,
-      .bottom-grid {
+    @media (max-width: 850px) {
+      .hero, .feature-grid, .stats-row, .bottom-grid {
         grid-template-columns: 1fr;
       }
     }
@@ -288,10 +364,9 @@
     <header class="topbar">
       <div class="brand-row">
         <div>
-          <h1>Benjamin Crawford</h1>
-          <div class="tagline">Web student • Designer • Builder</div>
+          <h1>Benjamin</h1>
         </div>
-        <div class="badge">Portfolio Wireframe</div>
+        <div class="tag">Gaming Portfolio</div>
       </div>
     </header>
 
@@ -305,54 +380,65 @@
     <main class="content">
       <section class="hero">
         <div class="hero-main">
-          <span class="eyebrow">Featured</span>
-          <h2>Creative digital work with a clean, modern feel.</h2>
+          <div class="eyebrow">Level 25 Developer</div>
+          <h2>Building worlds, crafting mechanics, and designing player experiences.</h2>
           <p>
-            This wireframe showcases a polished portfolio layout with clear hierarchy,
-            balanced spacing, and a strong visual identity for a web development brand.
+            I’m a web and game-focused student creating interactive digital experiences,
+            from polished interfaces to immersive gameplay concepts and creative problem solving.
           </p>
+
+          <div class="cta-row">
+            <a href="#projects" class="btn primary">View Projects</a>
+            <a href="about.html" class="btn secondary">About Me</a>
+          </div>
         </div>
 
-        <aside class="hero-side">
-          <div class="mock-image">Hero Image / Snapshot</div>
+        <aside class="side-panel">
+          <div class="mock-shot">Cover Art / Gameplay Preview</div>
         </aside>
       </section>
 
-      <h2 class="section-title">Key highlights</h2>
+      <div class="stats-row">
+        <div class="stat-box"><strong>12+</strong><span>Projects</span></div>
+        <div class="stat-box"><strong>4</strong><span>Game Genres</span></div>
+        <div class="stat-box"><strong>99%</strong><span>Creative Drive</span></div>
+      </div>
+
+      <h2 class="section-title" id="projects">Featured Games</h2>
       <section class="feature-grid">
         <article class="card">
-          <div class="icon">✦</div>
-          <h3>Projects</h3>
-          <p>Showcase the most important work with large clear cards and concise summaries.</p>
+          <div class="icon">🎮</div>
+          <h3>Action Adventure</h3>
+          <p>Fast-paced combat, exploration, and a cinematic story structure built around player choice and challenge.</p>
         </article>
 
         <article class="card">
-          <div class="icon">▣</div>
-          <h3>Skills</h3>
-          <p>Display technical strengths in a balanced, readable layout for quick scanning.</p>
+          <div class="icon">⚔️</div>
+          <h3>RPG Systems</h3>
+          <p>Character progression, scalable stat systems, and quest-based progression to create satisfying long-term play.</p>
         </article>
 
         <article class="card">
-          <div class="icon">◎</div>
-          <h3>About</h3>
-          <p>Introduce your story, interests, and goals in a clean, welcoming section.</p>
+          <div class="icon">🚀</div>
+          <h3>Web Play</h3>
+          <p>Interactive digital projects that blend game-like design, UI polish, and engaging web experiences.</p>
         </article>
       </section>
 
       <section class="bottom-grid">
         <div class="info-box">
-          <h3>Featured content</h3>
+          <h3>What I focus on</h3>
           <ul class="list">
-            <li>Portfolio Overview</li>
-            <li>Project Case Studies</li>
-            <li>Student Work and Design Process</li>
-            <li>Professional Summary and Goals</li>
+            <li>Game design and concept development</li>
+            <li>Player-centered interface layouts</li>
+            <li>Creative storytelling and worldbuilding</li>
+            <li>Responsive web experiences with game-style visuals</li>
           </ul>
         </div>
 
         <aside class="info-box">
           <h3>Quick links</h3>
-          <div class="mini-box">Profile</div>
+          <div class="mini-box">Portfolio</div>
           <div class="mini-box">Resume</div>
           <div class="mini-box">Contact</div>
         </aside>
