@@ -55,10 +55,20 @@ body {
   line-height: 1.1;
 }
 
+/* REPLACE THIS: */
 .subtitle {
   margin: 0;
   color: rgba(255, 255, 255, 0.82);
   font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* WITH THIS: */
+.subtitle {
+  margin: 0;
+  color: #ffffff; /* Pure white for high contrast against dark blue */
+  font-size: 0.85rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
@@ -92,10 +102,22 @@ body {
   font-weight: 600;
 }
 
+/* REPLACE THIS: */
 .site-nav a:hover,
 .site-nav a:focus {
   outline: none;
   box-shadow: none;
+}
+
+/* WITH THIS: */
+.site-nav a:hover {
+  background: #2d4059;
+  color: #ffffff;
+}
+
+.site-nav a:focus {
+  outline: 3px solid #d39b62; /* Clear visual focus outline for keyboard users */
+  outline-offset: 2px;
 }
 
 .page-main {
