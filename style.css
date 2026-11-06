@@ -123,8 +123,22 @@ body {
   background: linear-gradient(135deg, rgba(211, 155, 98, 0.12), rgba(255, 255, 255, 0.95));
 }
 
-.image-box {
+.image-box,
+.placeholder-box {
   min-height: 260px;
+  border-radius: var(--radius);
+  border: 2px dashed rgba(45, 64, 89, 0.25);
+  background: linear-gradient(135deg, rgba(45, 64, 89, 0.04), rgba(211, 155, 98, 0.12));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 24px;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.image-box {
   padding: 0;
   overflow: hidden;
 }
