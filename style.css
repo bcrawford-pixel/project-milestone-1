@@ -39,7 +39,7 @@ body {
 }
 
 .subtitle {
-  color: var(--text-inverse); /* Maintained contrast */
+  color: var(--text-inverse); /* White text for dark header/buttons */
 }
 
 /* Navigation Links */
